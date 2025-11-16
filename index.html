@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Template</title>
+    <link rel="icon" href="64.png">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+        }
+
+        body {
+            background: linear-gradient(120deg, #bb9494 30%, #f0f0f0 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #card {
+            width: 400px;
+            padding: 15px 20px;
+            overflow: hidden;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+        }
+
+        .card-body {
+            background: #fff;
+            box-shadow: 0px 0px 15px #ffff;
+        }
+
+        .intro {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 7px 4px;
+            gap: 3px;
+            align-items: center;
+            background: #181438;
+            color: #ffff;
+            border-radius: 3px;
+        }
+
+        .brand {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 28px;
+        }
+
+        .d {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 18px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .line {
+            height: 2px;
+            background: #020e52;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #card-data {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #card-data .row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 500;
+        }
+
+        .id {
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 300;
+        }
+
+        #card-pro {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+
+        #pro-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            transition: 0.4s;
+        }
+
+        .button a {
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            background: tomato;
+            color: #020e52;
+            padding: 4px;
+            border-radius: 2px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        #card:hover .button {
+            transform: translateY(0);
+        }
+
+        .button a:hover {
+            background: #020e52;
+            ;
+            color: tomato;
+        }
+
+        /* Form CSS Started */
+
+        #form {
+            width: 450px;
+            padding: 7px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            background: #ddd;
+            border-radius: 3px;
+        }
+
+        .form-head {
+            text-align: center;
+            color: #00a;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 6px;
+        }
+
+        #form .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #form label,
+        form input {
+            font-size: 18px;
+            padding: 4px 7px;
+            border-radius: 2px;
+        }
+
+        #form label{
+            color: #0b1336;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #form input::placeholder {
+            color: #676a77;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        #form .btn {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 10px;
+        }
+
+        #form .aBtn {
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 2px;
+            background: tomato;
+            color: #020e52;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #form .aBtn:hover {
+            background: #020e52;
+            color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="card">
+        <div class="card-body">
+            <div class="intro">
+                <h2 class="brand" id="brandName">64 PSYBER</h2>
+                <p class="brand-desc d" id="branDesc">We provides Teclical solution.</p>
+            </div>
+            <hr class="line">
+            <div class="info">
+                <div id="card-data">
+                    <div class="row">
+                        <span class="title">Name : </span>
+                        <h3 id="myName" class="id"></h3>
+                    </div>
+                    <div class="row">
+                        <span class="title">Desination : </span>
+                        <h4 id="myDest" class="id"></h4>
+                    </div>
+                    <div class="row">
+                        <span class="title">City : </span>
+                        <h4 id="myCity" class="id"></h4>
+                    </div>
+                    <div class="row">
+                        <span class="title">Mobile : </span>
+                        <h4 id="myNum" class="id"></h4>
+                    </div>
+                </div>
+                <div id="card-pro">
+                    <img src="64.png" alt="" id="pro-img">
+                </div>
+            </div>
+            <hr class="line">
+            <p class="d" style="display: flex;justify-content: space-evenly;">
+                <span id="brandAdd">Samastipur, Bihar</span>
+                <a href="" style="text-decoration: none;" id="brandNum">7643046814</a>
+            </p>
+        </div>
+        <div class="button">
+            <a href="" id="edit-btn">Edit</a>
+            <a href="" id="down-btn">Download</a>
+        </div>
+    </div>
+
+    <form action="" id="form">
+        <h2 class="form-head">Add Your Details</h2>
+        <div class="row">
+            <label for="addName">Brand Name : </label>
+            <input type="text" id="addName" placeholder="Enter Your Brand Name ">
+        </div>
+        <div class="row">
+            <label for="adDesc">Brand Slogon : </label>
+            <input type="text" id="adDesc" placeholder="Enter Brand Slogon">
+        </div>
+        <div class="row">
+            <label for="name">Your Name : </label>
+            <input type="text" id="name" placeholder="Enter Your Name ">
+        </div>
+        <div class="row">
+            <label for="dest">Your Desination : </label>
+            <input type="text" id="dest" placeholder="Enter Your Desination ">
+        </div>
+        <div class="row">
+            <label for="city">Your City : </label>
+            <input type="text" id="city" placeholder="Enter Your City ">
+        </div>
+        <div class="row">
+            <label for="num">Your Number : </label>
+            <input type="text" id="num" placeholder="Enter Your Mobile Number ">
+        </div>
+        <div class="row">
+            <label for="addAdd">Brand Address : </label>
+            <input type="text" id="addAdd" placeholder="Enter Brand Address ">
+        </div>
+        <div class="row">
+            <label for="addNum">Brand Number : </label>
+            <input type="text" id="addNum" placeholder="Enter Brand Mobile Number ">
+        </div>
+        <div class="row">
+            <label for="img">Image : </label>
+            <input type="file" id="img" accept="image/*">
+        </div>
+        <div class="btn">
+            <button type="button" class="aBtn" id="backBtn">Back</button>
+            <input type="button" value="Save" class="aBtn" id="saveBtn">
+        </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script>
+        let edit = document.getElementById('edit-btn');
+        let downl = document.getElementById('down-btn');
+        let backBtn = document.getElementById('backBtn');
+        let saveBtn = document.getElementById('saveBtn');
+        let card = document.getElementById('card');
+
+        let brandName = document.getElementById('brandName');
+        let branDesc = document.getElementById('branDesc');
+        let myName = document.getElementById('myName');
+        let myDest = document.getElementById('myDest');
+        let myCity = document.getElementById('myCity');
+        let myNum = document.getElementById('myNum');
+        let brandAdd = document.getElementById('brandAdd');
+        let brandNum = document.getElementById('brandNum');
+
+        let form = document.getElementById('form');
+
+        form.style.display = 'none';
+
+        edit.addEventListener('click', (e) => {
+            e.preventDefault();
+            form.style.display = 'flex';
+            card.style.display = 'none';
+
+        });
+
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            form.style.display = 'none';
+            card.style.display = 'flex';
+        });
+
+        saveBtn.addEventListener('click', () => {
+            let addName = document.getElementById('addName');
+            let adDesc = document.getElementById('adDesc');
+            let name = document.getElementById('name');
+            let dest = document.getElementById('dest');
+            let city = document.getElementById('city');
+            let num = document.getElementById('num');
+            let addAdd = document.getElementById('addAdd');
+            let addNum = document.getElementById('addNum');
+            let img = document.getElementById('img');
+
+            brandName.innerText = addName.value;
+            branDesc.innerText = adDesc.value;
+            myName.innerText = name.value;
+            myDest.innerText = dest.value;
+            myCity.innerText = city.value;
+            myNum.innerText = num.value;
+            brandAdd.innerText = addAdd.value;
+            brandNum.innerText = addNum.value;
+
+            addName.value = '';
+            adDesc.value = '';
+            name.value = '';
+            dest.value = '';
+            city.value = '';
+            num.value = '';
+            addNum.value = '';
+            addAdd.value = '';
+
+            if (img.files && img.files[0]) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('pro-img').src = e.target.result;
+                }
+                reader.readAsDataURL(img.files[0]);
+            }
+
+            form.style.display = 'none';
+            card.style.display = 'flex';
+        });
+
+        // Download Logic
+
+        downl.addEventListener('click', (e) => {
+            e.preventDefault();
+            html2canvas(document.querySelector("#card")).then(canvas => {
+                let link = document.createElement("a");
+                link.download = `${myName.innerText || 'card'}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
