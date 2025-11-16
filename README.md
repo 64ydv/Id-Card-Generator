@@ -48,7 +48,7 @@ Switch easily between “Edit Mode” and “Card View Mode”.
 ## 📸 Preview
 
 > Example look of the card layout 👇  
-![Card Preview](64 YADAV.png)
+[Card Preview](64 YADAV.png)
 
 ---
 
